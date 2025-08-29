@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: nodejs-cohvvtnm-gitops
+  description: This is GitOps manifest for nodejs-cohvvtnm   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=nodejs-cohvvtnm
+    backstage.io/kubernetes-id: nodejs-cohvvtnm 
+    backstage.io/techdocs-ref: dir:. 
+    jenkins.io/job-full-name: nodejs-cohvvtnm-gitops
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:nodejs-cohvvtnm
